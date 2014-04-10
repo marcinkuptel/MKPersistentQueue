@@ -5,13 +5,13 @@
 
 
 extern const struct MKOperationAttributes {
-	 NSString *identifier;
-	 NSString *priority;
-	 NSString *value;
+	__unsafe_unretained NSString *identifier;
+	__unsafe_unretained NSString *priority;
+	__unsafe_unretained NSString *value;
 } MKOperationAttributes;
 
 extern const struct MKOperationRelationships {
-	 NSString *repository;
+	__unsafe_unretained NSString *repository;
 } MKOperationRelationships;
 
 extern const struct MKOperationFetchedProperties {
@@ -36,7 +36,7 @@ extern const struct MKOperationFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSString* identifier;
+@property (nonatomic, strong) NSString* identifier;
 
 
 
@@ -46,7 +46,7 @@ extern const struct MKOperationFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSNumber* priority;
+@property (nonatomic, strong) NSNumber* priority;
 
 
 
@@ -60,7 +60,7 @@ extern const struct MKOperationFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSData* value;
+@property (nonatomic, strong) NSData* value;
 
 
 
@@ -70,7 +70,7 @@ extern const struct MKOperationFetchedProperties {
 
 
 
-@property (nonatomic, retain) MKRepository *repository;
+@property (nonatomic, strong) MKRepository *repository;
 
 //- (BOOL)validateRepository:(id*)value_ error:(NSError**)error_;
 

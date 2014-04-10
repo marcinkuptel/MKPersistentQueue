@@ -5,11 +5,11 @@
 
 
 extern const struct MKRepositoryAttributes {
-	 NSString *name;
+	__unsafe_unretained NSString *name;
 } MKRepositoryAttributes;
 
 extern const struct MKRepositoryRelationships {
-	 NSString *operations;
+	__unsafe_unretained NSString *operations;
 } MKRepositoryRelationships;
 
 extern const struct MKRepositoryFetchedProperties {
@@ -32,7 +32,7 @@ extern const struct MKRepositoryFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSString* name;
+@property (nonatomic, strong) NSString* name;
 
 
 
@@ -42,7 +42,7 @@ extern const struct MKRepositoryFetchedProperties {
 
 
 
-@property (nonatomic, retain) NSSet *operations;
+@property (nonatomic, strong) NSSet *operations;
 
 - (NSMutableSet*)operationsSet;
 
