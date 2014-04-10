@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		09EB84F918F7539B00BFDFEF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09EB84F818F7539B00BFDFEF /* Foundation.framework */; };
+		09EB84FE18F7539B00BFDFEF /* MKPersistentQueue.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 09EB84FD18F7539B00BFDFEF /* MKPersistentQueue.h */; };
+		09EB850018F7539B00BFDFEF /* MKPersistentQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EB84FF18F7539B00BFDFEF /* MKPersistentQueue.m */; };
+		09EB850718F7539B00BFDFEF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09EB850618F7539B00BFDFEF /* XCTest.framework */; };
+		09EB850818F7539B00BFDFEF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09EB84F818F7539B00BFDFEF /* Foundation.framework */; };
+		09EB850A18F7539B00BFDFEF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09EB850918F7539B00BFDFEF /* UIKit.framework */; };
+		09EB850D18F7539B00BFDFEF /* libMKPersistentQueue.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09EB84F518F7539B00BFDFEF /* libMKPersistentQueue.a */; };
+		09EB851318F7539B00BFDFEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09EB851118F7539B00BFDFEF /* InfoPlist.strings */; };
+		09EB851518F7539B00BFDFEF /* MKPersistentQueueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EB851418F7539B00BFDFEF /* MKPersistentQueueTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		09EB850B18F7539B00BFDFEF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09EB84ED18F7539B00BFDFEF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 09EB84F418F7539B00BFDFEF;
+			remoteInfo = MKPersistentQueue;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		09EB84F318F7539B00BFDFEF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				09EB84FE18F7539B00BFDFEF /* MKPersistentQueue.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		09EB84F518F7539B00BFDFEF /* libMKPersistentQueue.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMKPersistentQueue.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		09EB84F818F7539B00BFDFEF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		09EB84FC18F7539B00BFDFEF /* MKPersistentQueue-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MKPersistentQueue-Prefix.pch"; sourceTree = "<group>"; };
+		09EB84FD18F7539B00BFDFEF /* MKPersistentQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKPersistentQueue.h; sourceTree = "<group>"; };
+		09EB84FF18F7539B00BFDFEF /* MKPersistentQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKPersistentQueue.m; sourceTree = "<group>"; };
+		09EB850518F7539B00BFDFEF /* MKPersistentQueueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MKPersistentQueueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		09EB850618F7539B00BFDFEF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		09EB850918F7539B00BFDFEF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		09EB851018F7539B00BFDFEF /* MKPersistentQueueTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MKPersistentQueueTests-Info.plist"; sourceTree = "<group>"; };
+		09EB851218F7539B00BFDFEF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		09EB851418F7539B00BFDFEF /* MKPersistentQueueTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKPersistentQueueTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		09EB84F218F7539B00BFDFEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09EB84F918F7539B00BFDFEF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09EB850218F7539B00BFDFEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09EB850718F7539B00BFDFEF /* XCTest.framework in Frameworks */,
+				09EB850A18F7539B00BFDFEF /* UIKit.framework in Frameworks */,
+				09EB850D18F7539B00BFDFEF /* libMKPersistentQueue.a in Frameworks */,
+				09EB850818F7539B00BFDFEF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09EB84EC18F7539B00BFDFEF = {
+			isa = PBXGroup;
+			children = (
+				09EB84FA18F7539B00BFDFEF /* MKPersistentQueue */,
+				09EB850E18F7539B00BFDFEF /* MKPersistentQueueTests */,
+				09EB84F718F7539B00BFDFEF /* Frameworks */,
+				09EB84F618F7539B00BFDFEF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		09EB84F618F7539B00BFDFEF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				09EB84F518F7539B00BFDFEF /* libMKPersistentQueue.a */,
+				09EB850518F7539B00BFDFEF /* MKPersistentQueueTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		09EB84F718F7539B00BFDFEF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				09EB84F818F7539B00BFDFEF /* Foundation.framework */,
+				09EB850618F7539B00BFDFEF /* XCTest.framework */,
+				09EB850918F7539B00BFDFEF /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		09EB84FA18F7539B00BFDFEF /* MKPersistentQueue */ = {
+			isa = PBXGroup;
+			children = (
+				09EB84FD18F7539B00BFDFEF /* MKPersistentQueue.h */,
+				09EB84FF18F7539B00BFDFEF /* MKPersistentQueue.m */,
+				09EB84FB18F7539B00BFDFEF /* Supporting Files */,
+			);
+			path = MKPersistentQueue;
+			sourceTree = "<group>";
+		};
+		09EB84FB18F7539B00BFDFEF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				09EB84FC18F7539B00BFDFEF /* MKPersistentQueue-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		09EB850E18F7539B00BFDFEF /* MKPersistentQueueTests */ = {
+			isa = PBXGroup;
+			children = (
+				09EB851418F7539B00BFDFEF /* MKPersistentQueueTests.m */,
+				09EB850F18F7539B00BFDFEF /* Supporting Files */,
+			);
+			path = MKPersistentQueueTests;
+			sourceTree = "<group>";
+		};
+		09EB850F18F7539B00BFDFEF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				09EB851018F7539B00BFDFEF /* MKPersistentQueueTests-Info.plist */,
+				09EB851118F7539B00BFDFEF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		09EB84F418F7539B00BFDFEF /* MKPersistentQueue */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09EB851818F7539B00BFDFEF /* Build configuration list for PBXNativeTarget "MKPersistentQueue" */;
+			buildPhases = (
+				09EB84F118F7539B00BFDFEF /* Sources */,
+				09EB84F218F7539B00BFDFEF /* Frameworks */,
+				09EB84F318F7539B00BFDFEF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MKPersistentQueue;
+			productName = MKPersistentQueue;
+			productReference = 09EB84F518F7539B00BFDFEF /* libMKPersistentQueue.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		09EB850418F7539B00BFDFEF /* MKPersistentQueueTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09EB851B18F7539B00BFDFEF /* Build configuration list for PBXNativeTarget "MKPersistentQueueTests" */;
+			buildPhases = (
+				09EB850118F7539B00BFDFEF /* Sources */,
+				09EB850218F7539B00BFDFEF /* Frameworks */,
+				09EB850318F7539B00BFDFEF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				09EB850C18F7539B00BFDFEF /* PBXTargetDependency */,
+			);
+			name = MKPersistentQueueTests;
+			productName = MKPersistentQueueTests;
+			productReference = 09EB850518F7539B00BFDFEF /* MKPersistentQueueTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		09EB84ED18F7539B00BFDFEF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Marcin Kuptel";
+			};
+			buildConfigurationList = 09EB84F018F7539B00BFDFEF /* Build configuration list for PBXProject "MKPersistentQueue" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 09EB84EC18F7539B00BFDFEF;
+			productRefGroup = 09EB84F618F7539B00BFDFEF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				09EB84F418F7539B00BFDFEF /* MKPersistentQueue */,
+				09EB850418F7539B00BFDFEF /* MKPersistentQueueTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		09EB850318F7539B00BFDFEF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09EB851318F7539B00BFDFEF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		09EB84F118F7539B00BFDFEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09EB850018F7539B00BFDFEF /* MKPersistentQueue.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09EB850118F7539B00BFDFEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09EB851518F7539B00BFDFEF /* MKPersistentQueueTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		09EB850C18F7539B00BFDFEF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 09EB84F418F7539B00BFDFEF /* MKPersistentQueue */;
+			targetProxy = 09EB850B18F7539B00BFDFEF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		09EB851118F7539B00BFDFEF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				09EB851218F7539B00BFDFEF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		09EB851618F7539B00BFDFEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		09EB851718F7539B00BFDFEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		09EB851918F7539B00BFDFEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/MKPersistentQueue.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MKPersistentQueue/MKPersistentQueue-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		09EB851A18F7539B00BFDFEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/MKPersistentQueue.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MKPersistentQueue/MKPersistentQueue-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		09EB851C18F7539B00BFDFEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MKPersistentQueue/MKPersistentQueue-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MKPersistentQueueTests/MKPersistentQueueTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		09EB851D18F7539B00BFDFEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MKPersistentQueue/MKPersistentQueue-Prefix.pch";
+				INFOPLIST_FILE = "MKPersistentQueueTests/MKPersistentQueueTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		09EB84F018F7539B00BFDFEF /* Build configuration list for PBXProject "MKPersistentQueue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09EB851618F7539B00BFDFEF /* Debug */,
+				09EB851718F7539B00BFDFEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		09EB851818F7539B00BFDFEF /* Build configuration list for PBXNativeTarget "MKPersistentQueue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09EB851918F7539B00BFDFEF /* Debug */,
+				09EB851A18F7539B00BFDFEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		09EB851B18F7539B00BFDFEF /* Build configuration list for PBXNativeTarget "MKPersistentQueueTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09EB851C18F7539B00BFDFEF /* Debug */,
+				09EB851D18F7539B00BFDFEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 09EB84ED18F7539B00BFDFEF /* Project object */;
+}
