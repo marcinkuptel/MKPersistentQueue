@@ -1,5 +1,5 @@
 //
-//  MKPersistentQueue.h
+//  MKCoreDataStore.h
 //  MKPersistentQueue
 //
 //  Created by Marcin Kuptel on 10/04/2014.
@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MKDataStore.h"
 
 /**
  */
-@interface MKPersistentQueue : NSObject
+@interface MKCoreDataStore : NSObject<MKDataStore>
 
-+ (MKPersistentQueue*) queueWithName: (NSString*) name;
+- (instancetype) initWithRepositoryName: (NSString*) repoName;
 
 @end

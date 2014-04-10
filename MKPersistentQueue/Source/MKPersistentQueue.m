@@ -7,7 +7,29 @@
 //
 
 #import "MKPersistentQueue.h"
+#import "MKDataStore.h"
+
+@interface MKPersistentQueue ()
+
+@property (nonatomic, strong) id<MKDataStore> dataStore;
+
+@end
 
 @implementation MKPersistentQueue
+
++ (MKPersistentQueue*) queueWithName: (NSString*) name
+{
+    MKPersistentQueue *queue = [[MKPersistentQueue alloc] initWithDataStore: nil];
+    return queue;
+}
+
+- (instancetype) initWithDataStore: (id<MKDataStore>) dataStore
+{
+    self = [super init];
+    if (self) {
+        _dataStore = dataStore;
+    }
+    return dataStore;
+}
 
 @end
