@@ -20,6 +20,10 @@
 		09EB852018F7594800BFDFEF /* MKCoreDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EB851F18F7594800BFDFEF /* MKCoreDataStore.m */; };
 		09EB852218F7595400BFDFEF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09EB852118F7595400BFDFEF /* CoreData.framework */; };
 		09EB852718F75AFC00BFDFEF /* MKDataStoreModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09EB852518F75AFC00BFDFEF /* MKDataStoreModel.xcdatamodeld */; };
+		09EB852F18F75DEB00BFDFEF /* _MKOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EB852C18F75DEB00BFDFEF /* _MKOperation.m */; };
+		09EB853018F75DEB00BFDFEF /* _MKRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EB852E18F75DEB00BFDFEF /* _MKRepository.m */; };
+		09EB853518F75DF800BFDFEF /* MKOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EB853218F75DF800BFDFEF /* MKOperation.m */; };
+		09EB853618F75DF800BFDFEF /* MKRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EB853418F75DF800BFDFEF /* MKRepository.m */; };
 		5D536DFCE34749B693CD11E0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EED7D4F207F547D5AA47FFF9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +67,14 @@
 		09EB852118F7595400BFDFEF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		09EB852318F75A8E00BFDFEF /* MKDataStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MKDataStore.h; path = "Source/Data Store/MKDataStore.h"; sourceTree = "<group>"; };
 		09EB852618F75AFC00BFDFEF /* MKDataStoreModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MKDataStoreModel.xcdatamodel; sourceTree = "<group>"; };
+		09EB852B18F75DEB00BFDFEF /* _MKOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _MKOperation.h; path = "Source/Data Store/Models/Machine/_MKOperation.h"; sourceTree = "<group>"; };
+		09EB852C18F75DEB00BFDFEF /* _MKOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _MKOperation.m; path = "Source/Data Store/Models/Machine/_MKOperation.m"; sourceTree = "<group>"; };
+		09EB852D18F75DEB00BFDFEF /* _MKRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _MKRepository.h; path = "Source/Data Store/Models/Machine/_MKRepository.h"; sourceTree = "<group>"; };
+		09EB852E18F75DEB00BFDFEF /* _MKRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _MKRepository.m; path = "Source/Data Store/Models/Machine/_MKRepository.m"; sourceTree = "<group>"; };
+		09EB853118F75DF800BFDFEF /* MKOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKOperation.h; path = "Source/Data Store/Models/Human/MKOperation.h"; sourceTree = "<group>"; };
+		09EB853218F75DF800BFDFEF /* MKOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKOperation.m; path = "Source/Data Store/Models/Human/MKOperation.m"; sourceTree = "<group>"; };
+		09EB853318F75DF800BFDFEF /* MKRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKRepository.h; path = "Source/Data Store/Models/Human/MKRepository.h"; sourceTree = "<group>"; };
+		09EB853418F75DF800BFDFEF /* MKRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKRepository.m; path = "Source/Data Store/Models/Human/MKRepository.m"; sourceTree = "<group>"; };
 		774E26C675364259AE94AAEC /* Pods-MKPersistentQueueTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MKPersistentQueueTests.xcconfig"; path = "Pods/Pods-MKPersistentQueueTests.xcconfig"; sourceTree = "<group>"; };
 		8E580FF6ACFE422BBB64E5F3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C9893378612C49AFB90A37E3 /* libPods-MKPersistentQueueTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MKPersistentQueueTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,12 +181,44 @@
 		09EB852418F75A9600BFDFEF /* Data Store */ = {
 			isa = PBXGroup;
 			children = (
+				09EB852818F75D3F00BFDFEF /* Models */,
 				09EB851E18F7594800BFDFEF /* MKCoreDataStore.h */,
 				09EB851F18F7594800BFDFEF /* MKCoreDataStore.m */,
 				09EB852318F75A8E00BFDFEF /* MKDataStore.h */,
 				09EB852518F75AFC00BFDFEF /* MKDataStoreModel.xcdatamodeld */,
 			);
 			name = "Data Store";
+			sourceTree = "<group>";
+		};
+		09EB852818F75D3F00BFDFEF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				09EB852A18F75DDC00BFDFEF /* Machine */,
+				09EB852918F75DD600BFDFEF /* Human */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		09EB852918F75DD600BFDFEF /* Human */ = {
+			isa = PBXGroup;
+			children = (
+				09EB853118F75DF800BFDFEF /* MKOperation.h */,
+				09EB853218F75DF800BFDFEF /* MKOperation.m */,
+				09EB853318F75DF800BFDFEF /* MKRepository.h */,
+				09EB853418F75DF800BFDFEF /* MKRepository.m */,
+			);
+			name = Human;
+			sourceTree = "<group>";
+		};
+		09EB852A18F75DDC00BFDFEF /* Machine */ = {
+			isa = PBXGroup;
+			children = (
+				09EB852B18F75DEB00BFDFEF /* _MKOperation.h */,
+				09EB852C18F75DEB00BFDFEF /* _MKOperation.m */,
+				09EB852D18F75DEB00BFDFEF /* _MKRepository.h */,
+				09EB852E18F75DEB00BFDFEF /* _MKRepository.m */,
+			);
+			name = Machine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,8 +370,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				09EB852018F7594800BFDFEF /* MKCoreDataStore.m in Sources */,
+				09EB853618F75DF800BFDFEF /* MKRepository.m in Sources */,
+				09EB852F18F75DEB00BFDFEF /* _MKOperation.m in Sources */,
 				09EB852718F75AFC00BFDFEF /* MKDataStoreModel.xcdatamodeld in Sources */,
+				09EB853018F75DEB00BFDFEF /* _MKRepository.m in Sources */,
 				09EB850018F7539B00BFDFEF /* MKPersistentQueue.m in Sources */,
+				09EB853518F75DF800BFDFEF /* MKOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
