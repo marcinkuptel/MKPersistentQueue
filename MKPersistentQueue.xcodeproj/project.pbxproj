@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		093480FE6D944730A7E80682 /* libPods-MKPersistentQueueTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9893378612C49AFB90A37E3 /* libPods-MKPersistentQueueTests.a */; };
 		09EB84F918F7539B00BFDFEF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09EB84F818F7539B00BFDFEF /* Foundation.framework */; };
 		09EB84FE18F7539B00BFDFEF /* MKPersistentQueue.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 09EB84FD18F7539B00BFDFEF /* MKPersistentQueue.h */; };
 		09EB850018F7539B00BFDFEF /* MKPersistentQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EB84FF18F7539B00BFDFEF /* MKPersistentQueue.m */; };
@@ -16,6 +17,14 @@
 		09EB850D18F7539B00BFDFEF /* libMKPersistentQueue.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09EB84F518F7539B00BFDFEF /* libMKPersistentQueue.a */; };
 		09EB851318F7539B00BFDFEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09EB851118F7539B00BFDFEF /* InfoPlist.strings */; };
 		09EB851518F7539B00BFDFEF /* MKPersistentQueueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EB851418F7539B00BFDFEF /* MKPersistentQueueTests.m */; };
+		09EB852018F7594800BFDFEF /* MKCoreDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EB851F18F7594800BFDFEF /* MKCoreDataStore.m */; };
+		09EB852218F7595400BFDFEF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09EB852118F7595400BFDFEF /* CoreData.framework */; };
+		09EB852718F75AFC00BFDFEF /* MKDataStoreModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09EB852518F75AFC00BFDFEF /* MKDataStoreModel.xcdatamodeld */; };
+		09EB852F18F75DEB00BFDFEF /* _MKOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EB852C18F75DEB00BFDFEF /* _MKOperation.m */; };
+		09EB853018F75DEB00BFDFEF /* _MKRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EB852E18F75DEB00BFDFEF /* _MKRepository.m */; };
+		09EB853518F75DF800BFDFEF /* MKOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EB853218F75DF800BFDFEF /* MKOperation.m */; };
+		09EB853618F75DF800BFDFEF /* MKRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EB853418F75DF800BFDFEF /* MKRepository.m */; };
+		5D536DFCE34749B693CD11E0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EED7D4F207F547D5AA47FFF9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +54,31 @@
 		09EB84F518F7539B00BFDFEF /* libMKPersistentQueue.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMKPersistentQueue.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		09EB84F818F7539B00BFDFEF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		09EB84FC18F7539B00BFDFEF /* MKPersistentQueue-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MKPersistentQueue-Prefix.pch"; sourceTree = "<group>"; };
-		09EB84FD18F7539B00BFDFEF /* MKPersistentQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKPersistentQueue.h; sourceTree = "<group>"; };
-		09EB84FF18F7539B00BFDFEF /* MKPersistentQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKPersistentQueue.m; sourceTree = "<group>"; };
+		09EB84FD18F7539B00BFDFEF /* MKPersistentQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MKPersistentQueue.h; path = Source/MKPersistentQueue.h; sourceTree = "<group>"; };
+		09EB84FF18F7539B00BFDFEF /* MKPersistentQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MKPersistentQueue.m; path = Source/MKPersistentQueue.m; sourceTree = "<group>"; };
 		09EB850518F7539B00BFDFEF /* MKPersistentQueueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MKPersistentQueueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09EB850618F7539B00BFDFEF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		09EB850918F7539B00BFDFEF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		09EB851018F7539B00BFDFEF /* MKPersistentQueueTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MKPersistentQueueTests-Info.plist"; sourceTree = "<group>"; };
 		09EB851218F7539B00BFDFEF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		09EB851418F7539B00BFDFEF /* MKPersistentQueueTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKPersistentQueueTests.m; sourceTree = "<group>"; };
+		09EB851E18F7594800BFDFEF /* MKCoreDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKCoreDataStore.h; path = "Source/Data Store/MKCoreDataStore.h"; sourceTree = "<group>"; };
+		09EB851F18F7594800BFDFEF /* MKCoreDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKCoreDataStore.m; path = "Source/Data Store/MKCoreDataStore.m"; sourceTree = "<group>"; };
+		09EB852118F7595400BFDFEF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		09EB852318F75A8E00BFDFEF /* MKDataStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MKDataStore.h; path = "Source/Data Store/MKDataStore.h"; sourceTree = "<group>"; };
+		09EB852618F75AFC00BFDFEF /* MKDataStoreModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MKDataStoreModel.xcdatamodel; sourceTree = "<group>"; };
+		09EB852B18F75DEB00BFDFEF /* _MKOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _MKOperation.h; path = "Source/Data Store/Models/Machine/_MKOperation.h"; sourceTree = "<group>"; };
+		09EB852C18F75DEB00BFDFEF /* _MKOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _MKOperation.m; path = "Source/Data Store/Models/Machine/_MKOperation.m"; sourceTree = "<group>"; };
+		09EB852D18F75DEB00BFDFEF /* _MKRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _MKRepository.h; path = "Source/Data Store/Models/Machine/_MKRepository.h"; sourceTree = "<group>"; };
+		09EB852E18F75DEB00BFDFEF /* _MKRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _MKRepository.m; path = "Source/Data Store/Models/Machine/_MKRepository.m"; sourceTree = "<group>"; };
+		09EB853118F75DF800BFDFEF /* MKOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKOperation.h; path = "Source/Data Store/Models/Human/MKOperation.h"; sourceTree = "<group>"; };
+		09EB853218F75DF800BFDFEF /* MKOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKOperation.m; path = "Source/Data Store/Models/Human/MKOperation.m"; sourceTree = "<group>"; };
+		09EB853318F75DF800BFDFEF /* MKRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKRepository.h; path = "Source/Data Store/Models/Human/MKRepository.h"; sourceTree = "<group>"; };
+		09EB853418F75DF800BFDFEF /* MKRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKRepository.m; path = "Source/Data Store/Models/Human/MKRepository.m"; sourceTree = "<group>"; };
+		774E26C675364259AE94AAEC /* Pods-MKPersistentQueueTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MKPersistentQueueTests.xcconfig"; path = "Pods/Pods-MKPersistentQueueTests.xcconfig"; sourceTree = "<group>"; };
+		8E580FF6ACFE422BBB64E5F3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		C9893378612C49AFB90A37E3 /* libPods-MKPersistentQueueTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MKPersistentQueueTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EED7D4F207F547D5AA47FFF9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +86,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09EB852218F7595400BFDFEF /* CoreData.framework in Frameworks */,
 				09EB84F918F7539B00BFDFEF /* Foundation.framework in Frameworks */,
+				5D536DFCE34749B693CD11E0 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +100,7 @@
 				09EB850A18F7539B00BFDFEF /* UIKit.framework in Frameworks */,
 				09EB850D18F7539B00BFDFEF /* libMKPersistentQueue.a in Frameworks */,
 				09EB850818F7539B00BFDFEF /* Foundation.framework in Frameworks */,
+				093480FE6D944730A7E80682 /* libPods-MKPersistentQueueTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +114,8 @@
 				09EB850E18F7539B00BFDFEF /* MKPersistentQueueTests */,
 				09EB84F718F7539B00BFDFEF /* Frameworks */,
 				09EB84F618F7539B00BFDFEF /* Products */,
+				8E580FF6ACFE422BBB64E5F3 /* Pods.xcconfig */,
+				774E26C675364259AE94AAEC /* Pods-MKPersistentQueueTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,9 +131,12 @@
 		09EB84F718F7539B00BFDFEF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09EB852118F7595400BFDFEF /* CoreData.framework */,
 				09EB84F818F7539B00BFDFEF /* Foundation.framework */,
 				09EB850618F7539B00BFDFEF /* XCTest.framework */,
 				09EB850918F7539B00BFDFEF /* UIKit.framework */,
+				EED7D4F207F547D5AA47FFF9 /* libPods.a */,
+				C9893378612C49AFB90A37E3 /* libPods-MKPersistentQueueTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,6 +144,7 @@
 		09EB84FA18F7539B00BFDFEF /* MKPersistentQueue */ = {
 			isa = PBXGroup;
 			children = (
+				09EB852418F75A9600BFDFEF /* Data Store */,
 				09EB84FD18F7539B00BFDFEF /* MKPersistentQueue.h */,
 				09EB84FF18F7539B00BFDFEF /* MKPersistentQueue.m */,
 				09EB84FB18F7539B00BFDFEF /* Supporting Files */,
@@ -143,6 +178,49 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		09EB852418F75A9600BFDFEF /* Data Store */ = {
+			isa = PBXGroup;
+			children = (
+				09EB852818F75D3F00BFDFEF /* Models */,
+				09EB851E18F7594800BFDFEF /* MKCoreDataStore.h */,
+				09EB851F18F7594800BFDFEF /* MKCoreDataStore.m */,
+				09EB852318F75A8E00BFDFEF /* MKDataStore.h */,
+				09EB852518F75AFC00BFDFEF /* MKDataStoreModel.xcdatamodeld */,
+			);
+			name = "Data Store";
+			sourceTree = "<group>";
+		};
+		09EB852818F75D3F00BFDFEF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				09EB852A18F75DDC00BFDFEF /* Machine */,
+				09EB852918F75DD600BFDFEF /* Human */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		09EB852918F75DD600BFDFEF /* Human */ = {
+			isa = PBXGroup;
+			children = (
+				09EB853118F75DF800BFDFEF /* MKOperation.h */,
+				09EB853218F75DF800BFDFEF /* MKOperation.m */,
+				09EB853318F75DF800BFDFEF /* MKRepository.h */,
+				09EB853418F75DF800BFDFEF /* MKRepository.m */,
+			);
+			name = Human;
+			sourceTree = "<group>";
+		};
+		09EB852A18F75DDC00BFDFEF /* Machine */ = {
+			isa = PBXGroup;
+			children = (
+				09EB852B18F75DEB00BFDFEF /* _MKOperation.h */,
+				09EB852C18F75DEB00BFDFEF /* _MKOperation.m */,
+				09EB852D18F75DEB00BFDFEF /* _MKRepository.h */,
+				09EB852E18F75DEB00BFDFEF /* _MKRepository.m */,
+			);
+			name = Machine;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,9 +228,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09EB851818F7539B00BFDFEF /* Build configuration list for PBXNativeTarget "MKPersistentQueue" */;
 			buildPhases = (
+				7ECE202049BB410FA0E20C28 /* Check Pods Manifest.lock */,
 				09EB84F118F7539B00BFDFEF /* Sources */,
 				09EB84F218F7539B00BFDFEF /* Frameworks */,
 				09EB84F318F7539B00BFDFEF /* CopyFiles */,
+				38955B1E05DE42DB87068B63 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +247,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09EB851B18F7539B00BFDFEF /* Build configuration list for PBXNativeTarget "MKPersistentQueueTests" */;
 			buildPhases = (
+				7DC68D6A108F42B1ABEF9368 /* Check Pods Manifest.lock */,
 				09EB850118F7539B00BFDFEF /* Sources */,
 				09EB850218F7539B00BFDFEF /* Frameworks */,
 				09EB850318F7539B00BFDFEF /* Resources */,
+				CE0CFD01812D4BC3B94AB412 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -219,12 +301,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		38955B1E05DE42DB87068B63 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7DC68D6A108F42B1ABEF9368 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7ECE202049BB410FA0E20C28 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CE0CFD01812D4BC3B94AB412 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-MKPersistentQueueTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		09EB84F118F7539B00BFDFEF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09EB852018F7594800BFDFEF /* MKCoreDataStore.m in Sources */,
+				09EB853618F75DF800BFDFEF /* MKRepository.m in Sources */,
+				09EB852F18F75DEB00BFDFEF /* _MKOperation.m in Sources */,
+				09EB852718F75AFC00BFDFEF /* MKDataStoreModel.xcdatamodeld in Sources */,
+				09EB853018F75DEB00BFDFEF /* _MKRepository.m in Sources */,
 				09EB850018F7539B00BFDFEF /* MKPersistentQueue.m in Sources */,
+				09EB853518F75DF800BFDFEF /* MKOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +413,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv7,
+					armv7s,
+					x86_64,
+					i386,
+				);
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -299,6 +456,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv7,
+					armv7s,
+					x86_64,
+					i386,
+				);
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -328,6 +491,7 @@
 		};
 		09EB851918F7539B00BFDFEF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E580FF6ACFE422BBB64E5F3 /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/MKPersistentQueue.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -340,6 +504,7 @@
 		};
 		09EB851A18F7539B00BFDFEF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E580FF6ACFE422BBB64E5F3 /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/MKPersistentQueue.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -352,6 +517,7 @@
 		};
 		09EB851C18F7539B00BFDFEF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 774E26C675364259AE94AAEC /* Pods-MKPersistentQueueTests.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -372,6 +538,7 @@
 		};
 		09EB851D18F7539B00BFDFEF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 774E26C675364259AE94AAEC /* Pods-MKPersistentQueueTests.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -405,6 +572,7 @@
 				09EB851A18F7539B00BFDFEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		09EB851B18F7539B00BFDFEF /* Build configuration list for PBXNativeTarget "MKPersistentQueueTests" */ = {
 			isa = XCConfigurationList;
@@ -413,8 +581,23 @@
 				09EB851D18F7539B00BFDFEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		09EB852518F75AFC00BFDFEF /* MKDataStoreModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				09EB852618F75AFC00BFDFEF /* MKDataStoreModel.xcdatamodel */,
+			);
+			currentVersion = 09EB852618F75AFC00BFDFEF /* MKDataStoreModel.xcdatamodel */;
+			name = MKDataStoreModel.xcdatamodeld;
+			path = "Source/Data Store/MKDataStoreModel.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 09EB84ED18F7539B00BFDFEF /* Project object */;
 }

@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ */
 @interface MKPersistentQueue : NSObject
+
++ (MKPersistentQueue*) queueWithName: (NSString*) name;
 
 @end
