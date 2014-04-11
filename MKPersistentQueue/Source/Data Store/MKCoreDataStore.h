@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 #import "MKDataStore.h"
 
 /**
  */
 @interface MKCoreDataStore : NSObject<MKDataStore>
 
-- (instancetype) initWithRepositoryName: (NSString*) repoName;
+- (instancetype) initWithRepositoryName: (NSString*) repoName
+                                context: (NSManagedObjectContext*) context;
 
 @end
