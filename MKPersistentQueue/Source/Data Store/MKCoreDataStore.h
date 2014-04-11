@@ -17,4 +17,8 @@
 - (instancetype) initWithRepositoryName: (NSString*) repoName
                                 context: (NSManagedObjectContext*) context;
 
+- (NSError*) saveOperationWithIdentifier: (NSString*) identifier
+                                priority: (NSUInteger) priority
+                                   value: (NSData*) value;
+
 @end

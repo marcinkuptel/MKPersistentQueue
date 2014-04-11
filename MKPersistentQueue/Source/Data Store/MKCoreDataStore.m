@@ -8,6 +8,7 @@
 
 #import "MKCoreDataStore.h"
 #import "MKRepository.h"
+#import "MKOperation.h"
 
 @interface MKCoreDataStore ()
 
@@ -25,13 +26,56 @@
     self = [super init];
     if (self) {
         _repositoryName = [repoName copy];
-        _repository = [self _loadRepositoryWithName: repoName];
         _context = context;
+        _repository = [self _loadRepositoryWithName: repoName];
     }
     return self;
 }
 
+- (NSError*) saveOperationWithIdentifier: (NSString *)identifier
+                                priority: (NSUInteger)priority
+                                   value: (NSData *)value
+{
+    __block NSError *error = nil;
+    [self.context performBlockAndWait:^{
+        MKOperation *operation = [self _operationWithIdentifier: identifier];
+        if (!operation) {
+            operation = [NSEntityDescription insertNewObjectForEntityForName: @"MKOperation"
+                                                      inManagedObjectContext: self.context];
+        }
+        
+        operation.identifier = identifier;
+        operation.priority = @(priority);
+        operation.value = value;
+        
+        NSError *saveError = nil;
+        [self.context save: &saveError];
+        error = saveError;
+    }];
+    return error;
+}
+
 #pragma mark - Private
+
+- (MKOperation*) _operationWithIdentifier: (NSString*) identifier
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat: @"identifier = %@", identifier];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName: @"MKOperation"];
+    request.fetchLimit = 1;
+    request.predicate = predicate;
+    
+    NSError *fetchError = nil;
+    NSArray *operations = [self.context executeFetchRequest: request
+                                                      error: &fetchError];
+    
+    if (fetchError) {
+        NSAssert1(NO, @"Could not fetch operation. Error: %@", fetchError);
+    }
+    
+    NSAssert([operations count] <= 1, @"Wrong number of operations: %d", [operations count]);
+    
+    return [operations lastObject];
+}
 
 - (MKRepository*) _loadRepositoryWithName: (NSString*) repoName
 {

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		093480FE6D944730A7E80682 /* libPods-MKPersistentQueueTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9893378612C49AFB90A37E3 /* libPods-MKPersistentQueueTests.a */; };
+		09A9D67018F89DBE00ADAD37 /* MKCoreDataStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A9D66F18F89DBE00ADAD37 /* MKCoreDataStoreTests.m */; };
+		09A9D67218F89EF600ADAD37 /* MKCoreDataStoreIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A9D67118F89EF600ADAD37 /* MKCoreDataStoreIntegrationTests.m */; };
 		09EB84F918F7539B00BFDFEF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09EB84F818F7539B00BFDFEF /* Foundation.framework */; };
 		09EB84FE18F7539B00BFDFEF /* MKPersistentQueue.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 09EB84FD18F7539B00BFDFEF /* MKPersistentQueue.h */; };
 		09EB850018F7539B00BFDFEF /* MKPersistentQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 09EB84FF18F7539B00BFDFEF /* MKPersistentQueue.m */; };
@@ -51,6 +53,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		09A9D66F18F89DBE00ADAD37 /* MKCoreDataStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKCoreDataStoreTests.m; path = "Data Store/MKCoreDataStoreTests.m"; sourceTree = "<group>"; };
+		09A9D67118F89EF600ADAD37 /* MKCoreDataStoreIntegrationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKCoreDataStoreIntegrationTests.m; path = "Data Store/MKCoreDataStoreIntegrationTests.m"; sourceTree = "<group>"; };
 		09EB84F518F7539B00BFDFEF /* libMKPersistentQueue.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMKPersistentQueue.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		09EB84F818F7539B00BFDFEF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		09EB84FC18F7539B00BFDFEF /* MKPersistentQueue-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MKPersistentQueue-Prefix.pch"; sourceTree = "<group>"; };
@@ -107,6 +111,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09A9D66E18F89D9A00ADAD37 /* Data Store */ = {
+			isa = PBXGroup;
+			children = (
+				09A9D66F18F89DBE00ADAD37 /* MKCoreDataStoreTests.m */,
+				09A9D67118F89EF600ADAD37 /* MKCoreDataStoreIntegrationTests.m */,
+			);
+			name = "Data Store";
+			sourceTree = "<group>";
+		};
 		09EB84EC18F7539B00BFDFEF = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +176,7 @@
 		09EB850E18F7539B00BFDFEF /* MKPersistentQueueTests */ = {
 			isa = PBXGroup;
 			children = (
+				09A9D66E18F89D9A00ADAD37 /* Data Store */,
 				09EB851418F7539B00BFDFEF /* MKPersistentQueueTests.m */,
 				09EB850F18F7539B00BFDFEF /* Supporting Files */,
 			);
@@ -382,7 +396,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09A9D67018F89DBE00ADAD37 /* MKCoreDataStoreTests.m in Sources */,
 				09EB851518F7539B00BFDFEF /* MKPersistentQueueTests.m in Sources */,
+				09A9D67218F89EF600ADAD37 /* MKCoreDataStoreIntegrationTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
