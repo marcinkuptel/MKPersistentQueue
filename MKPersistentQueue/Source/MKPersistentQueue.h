@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MKOperationStore.h"
 
 /**
  */
 @interface MKPersistentQueue : NSObject
 
-+ (MKPersistentQueue*) queueWithName: (NSString*) name;
+- (instancetype) initWithOperationStore: (id<MKOperationStore>) operationStore;
 
 @end
