@@ -12,6 +12,11 @@
 
 @class MKOperation;
 
+typedef NS_ENUM(NSUInteger, MKCoreDataStoreError)
+{
+    MKCoreDataStoreErrorOperationNotFound = 2986
+};
+
 /**
  */
 @interface MKCoreDataStore : NSObject<MKDataStore>

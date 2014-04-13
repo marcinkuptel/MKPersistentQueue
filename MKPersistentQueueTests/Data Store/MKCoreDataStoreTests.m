@@ -185,6 +185,74 @@ describe(@"MKCoreDataStore", ^{
     
     context(@"when removing an operation", ^{
         
+        __block NSString *identifier;
+        
+        beforeEach(^{
+            identifier = [[NSUUID UUID] UUIDString];
+            store = [[MKCoreDataStore alloc] initWithRepositoryName: repoName
+                                                            context: contextMock];
+            [contextMock stub: @selector(performBlockAndWait:)
+                    withBlock:^id(NSArray *params) {
+                        void(^block)() = params[0];
+                        block();
+                        return nil;
+                    }];
+            
+            [[contextMock should] receive: @selector(performBlockAndWait:)];
+            [[contextMock should] receive: @selector(executeFetchRequest:error:)];
+        });
+        
+        it(@"returns no error if operation was successfuly removed", ^{
+            
+            [[contextMock should] receive: @selector(deleteObject:)];
+            [[contextMock should] receive: @selector(save:)];
+            
+            
+            [contextMock stub: @selector(executeFetchRequest:error:)
+                    withBlock:^id(NSArray *params) {
+                        return @[[MKOperation mock]];
+                    }];
+            
+            NSError *error = [store removeOperationWithIdentifier: identifier];
+            [[error should] beNil];
+        });
+        
+        it(@"returns an error if operation could not be found", ^{
+            
+            [contextMock stub: @selector(executeFetchRequest:error:)
+                    withBlock:^id(NSArray *params) {
+                        return @[];
+                    }];
+            
+            NSError *error = [store removeOperationWithIdentifier: identifier];
+            [[error should] beNonNil];
+            [[theValue(error.code) should] equal: theValue(MKCoreDataStoreErrorOperationNotFound)];
+        });
+        
+        it(@"returns an error if CoreData save failed", ^{
+
+            [contextMock stub: @selector(executeFetchRequest:error:)
+                    withBlock:^id(NSArray *params) {
+                        return @[[MKOperation mock]];
+                    }];
+            
+            [contextMock stub: @selector(save:)
+                    withBlock:^id(NSArray *params) {
+                        NSValue * errVal = params[0];
+                        NSError * __autoreleasing * errPtr = (NSError * __autoreleasing *)[errVal pointerValue];
+                        NSLog(@"Pointer2: %p", errPtr);
+                        if(errPtr){
+                            *errPtr = [NSError errorWithDomain: @"CoreData save failed"
+                                                          code: 1
+                                                      userInfo: nil];
+                        }
+                        return nil;
+                    }];
+            
+            NSError *error = [store removeOperationWithIdentifier: identifier];
+            [[error should] beNonNil];
+            
+        });
     });
 });
 

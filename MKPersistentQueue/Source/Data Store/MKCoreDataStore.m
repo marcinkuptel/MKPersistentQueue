@@ -10,6 +10,8 @@
 #import "MKRepository.h"
 #import "MKOperation.h"
 
+static NSString * const kMKCoreDataStoreErrorDomain = @"com.marcinkuptel.core_data_store";
+
 @interface MKCoreDataStore ()
 
 @property (nonatomic, copy) NSString *repositoryName;
@@ -71,6 +73,26 @@
                                              error: error];
     }];
     return operation;
+}
+
+- (NSError*) removeOperationWithIdentifier:(NSString *)identifier
+{
+    __block NSError *error = nil;
+    [self.context performBlockAndWait:^{
+        MKOperation *operation = [self _operationWithIdentifier: identifier
+                                                          error: &error];
+        if (!error) {
+            if (!operation) {
+                error = [NSError errorWithDomain: kMKCoreDataStoreErrorDomain
+                                            code: MKCoreDataStoreErrorOperationNotFound
+                                        userInfo: nil];
+            }else{
+                [self.context deleteObject: operation];
+                [self.context save: &error];
+            }
+        }
+    }];
+    return error;
 }
 
 #pragma mark - Private
