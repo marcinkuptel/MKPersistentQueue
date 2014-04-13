@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="MKOperation" representedClassName="MKOperation" syncable="YES">
         <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="priority" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="Binary" syncable="YES"/>
         <relationship name="repository" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MKRepository" inverseName="operations" inverseEntity="MKRepository" syncable="YES"/>
     </entity>
@@ -11,7 +10,7 @@
         <relationship name="operations" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MKOperation" inverseName="repository" inverseEntity="MKOperation" syncable="YES"/>
     </entity>
     <elements>
+        <element name="MKOperation" positionX="126" positionY="-18" width="128" height="88"/>
         <element name="MKRepository" positionX="-63" positionY="-18" width="128" height="73"/>
-        <element name="MKOperation" positionX="126" positionY="-18" width="128" height="103"/>
     </elements>
 </model>

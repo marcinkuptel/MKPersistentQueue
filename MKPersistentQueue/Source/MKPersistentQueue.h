@@ -9,12 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "MKOperationStore.h"
 
+typedef void(^MKPersistentQueueEnqueueCompletion)(NSError*);
+
 /**
  */
 @interface MKPersistentQueue : NSObject
 
-- (instancetype) initWithOperationStore: (id<MKOperationStore>) operationStore;
-
-
+- (void) enqueueOperation: (NSOperation<NSCoding>*) operation
+               completion: (MKPersistentQueueEnqueueCompletion) completion;
 
 @end

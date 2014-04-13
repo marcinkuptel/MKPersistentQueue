@@ -11,6 +11,30 @@
 #import "MKOperation.h"
 #import <Kiwi/Kiwi.h>
 
+@interface TestOperation : NSOperation<NSCoding>
+
+@end
+
+@implementation TestOperation
+
+#pragma mark - NSCoding
+
+- (void) encodeWithCoder:(NSCoder *)aCoder
+{
+    
+}
+
+- (instancetype) initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
+
+@end
+
 SPEC_BEGIN(MKCoreDataStoreIntegrationTests)
 
 describe(@"MKCoreDataStoreIntegration", ^{
@@ -25,11 +49,9 @@ describe(@"MKCoreDataStoreIntegration", ^{
     context(@"when saving", ^{
         it(@"saves an operation successfully to CoreData", ^{
             
-            NSInteger priority = 5;
             NSString *testString = @"testString";
             NSData *testData = [testString dataUsingEncoding: NSUTF8StringEncoding];
             NSError *error = [store saveOperationWithIdentifier: identifier
-                                                       priority: priority
                                                           value: testData];
             [[error should] beNil];
             
@@ -39,7 +61,6 @@ describe(@"MKCoreDataStoreIntegration", ^{
             
             [[fetchError should] beNil];
             [[operation should] beNonNil];
-            [[operation.priority should] equal: theValue(priority)];
             [[operation.identifier should] equal: identifier];
             
             NSString *operationValue = [[NSString alloc] initWithData: operation.value
@@ -54,21 +75,41 @@ describe(@"MKCoreDataStoreIntegration", ^{
                 NSString *identifier = [[NSUUID UUID] UUIDString];
                 NSData *data = [identifier dataUsingEncoding: NSUTF8StringEncoding];
                 NSError *saveError = [store saveOperationWithIdentifier: identifier
-                                                               priority: 5
                                                                   value: data];
                 [[saveError should] beNil];
             }
+        });
+        
+        it(@"saves multiple operations and fetches all of them correctly", ^{
+           
+            NSUInteger numOperations = 100;
+            
+            for(int i = 0; i < numOperations; i++){
+                
+                NSString *identifier = [[NSUUID UUID] UUIDString];
+                TestOperation *operation = [[TestOperation alloc] init];
+                NSData *data = [NSKeyedArchiver archivedDataWithRootObject: operation];
+                NSError *saveError = [store saveOperationWithIdentifier: identifier
+                                                                  value: data];
+                [[saveError should] beNil];
+            }
+            
+            NSError *fetchError = nil;
+            NSArray *operations = [store fetchAllOperations: &fetchError];
+            
+            [[fetchError should] beNil];
+            [[operations should] beNonNil];
+            [[theValue([operations count]) should] equal: theValue(numOperations)];
+            
         });
     });
     
     context(@"when removing", ^{
         it(@"removes an operation successfully", ^{
-            NSInteger priority = 5;
             NSString *testString = @"testString";
             NSData *testData = [testString dataUsingEncoding: NSUTF8StringEncoding];
             
             NSError *error = [store saveOperationWithIdentifier: identifier
-                                                       priority: priority
                                                           value: testData];
             [[error should] beNil];
             

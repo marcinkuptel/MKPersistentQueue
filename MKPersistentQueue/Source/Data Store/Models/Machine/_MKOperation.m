@@ -5,7 +5,6 @@
 
 const struct MKOperationAttributes MKOperationAttributes = {
 	.identifier = @"identifier",
-	.priority = @"priority",
 	.value = @"value",
 };
 
@@ -42,11 +41,6 @@ const struct MKOperationFetchedProperties MKOperationFetchedProperties = {
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
 	
-	if ([key isEqualToString:@"priorityValue"]) {
-		NSSet *affectingKey = [NSSet setWithObject:@"priority"];
-		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
-		return keyPaths;
-	}
 
 	return keyPaths;
 }
@@ -56,32 +50,6 @@ const struct MKOperationFetchedProperties MKOperationFetchedProperties = {
 
 @dynamic identifier;
 
-
-
-
-
-
-@dynamic priority;
-
-
-
-- (int16_t)priorityValue {
-	NSNumber *result = [self priority];
-	return [result shortValue];
-}
-
-- (void)setPriorityValue:(int16_t)value_ {
-	[self setPriority:[NSNumber numberWithShort:value_]];
-}
-
-- (int16_t)primitivePriorityValue {
-	NSNumber *result = [self primitivePriority];
-	return [result shortValue];
-}
-
-- (void)setPrimitivePriorityValue:(int16_t)value_ {
-	[self setPrimitivePriority:[NSNumber numberWithShort:value_]];
-}
 
 
 

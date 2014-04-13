@@ -59,13 +59,11 @@ describe(@"MKCoreDataStore", ^{
     context(@"when saving", ^{
        
         __block NSString *identifier;
-        __block NSUInteger priority;
         __block NSData *value;
         
         beforeEach(^{
             value = [NSData data];
             identifier = [[NSUUID UUID] UUIDString];
-            priority = 5;
             store = [[MKCoreDataStore alloc] initWithRepositoryName: repoName
                                                             context: contextMock];
         });
@@ -97,7 +95,6 @@ describe(@"MKCoreDataStore", ^{
             [[contextMock should] receive: @selector(performBlockAndWait:)];
             
             NSError *error = [store saveOperationWithIdentifier: identifier
-                                                       priority: priority
                                                           value: value];
 
             [[error should] beNonNil];
@@ -118,7 +115,6 @@ describe(@"MKCoreDataStore", ^{
             [[contextMock should] receive: @selector(performBlockAndWait:)];
             
             NSError *error = [store saveOperationWithIdentifier: identifier
-                                                       priority: priority
                                                           value: value];
             
             [[error should] beNil];
