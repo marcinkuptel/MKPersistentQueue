@@ -6,7 +6,6 @@
 
 extern const struct MKOperationAttributes {
 	__unsafe_unretained NSString *identifier;
-	__unsafe_unretained NSString *priority;
 	__unsafe_unretained NSString *value;
 } MKOperationAttributes;
 
@@ -18,7 +17,6 @@ extern const struct MKOperationFetchedProperties {
 } MKOperationFetchedProperties;
 
 @class MKRepository;
-
 
 
 
@@ -41,20 +39,6 @@ extern const struct MKOperationFetchedProperties {
 
 
 //- (BOOL)validateIdentifier:(id*)value_ error:(NSError**)error_;
-
-
-
-
-
-@property (nonatomic, strong) NSNumber* priority;
-
-
-
-@property int16_t priorityValue;
-- (int16_t)priorityValue;
-- (void)setPriorityValue:(int16_t)value_;
-
-//- (BOOL)validatePriority:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -89,15 +73,6 @@ extern const struct MKOperationFetchedProperties {
 
 - (NSString*)primitiveIdentifier;
 - (void)setPrimitiveIdentifier:(NSString*)value;
-
-
-
-
-- (NSNumber*)primitivePriority;
-- (void)setPrimitivePriority:(NSNumber*)value;
-
-- (int16_t)primitivePriorityValue;
-- (void)setPrimitivePriorityValue:(int16_t)value_;
 
 
 

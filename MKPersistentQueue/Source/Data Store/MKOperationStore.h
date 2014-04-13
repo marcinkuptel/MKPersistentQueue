@@ -13,12 +13,13 @@
 @protocol MKOperationStore <NSObject>
 
 - (NSError*) saveOperationWithIdentifier: (NSString*) identifier
-                                priority: (NSUInteger) priority
                                    value: (NSData*) value;
 
 - (MKOperation*) fetchOperationWithIdentifier: (NSString*) identifier
                                         error: (NSError**) error;
 
 - (NSError*) removeOperationWithIdentifier: (NSString*) identifier;
+
+- (NSArray*) fetchAllOperations: (NSError**) error;
 
 @end
