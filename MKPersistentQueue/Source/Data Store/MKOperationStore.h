@@ -10,7 +10,7 @@
 
 @class MKOperation;
 
-@protocol MKDataStore <NSObject>
+@protocol MKOperationStore <NSObject>
 
 - (NSError*) saveOperationWithIdentifier: (NSString*) identifier
                                 priority: (NSUInteger) priority

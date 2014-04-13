@@ -69,7 +69,7 @@
 		09EB851E18F7594800BFDFEF /* MKCoreDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKCoreDataStore.h; path = "Source/Data Store/MKCoreDataStore.h"; sourceTree = "<group>"; };
 		09EB851F18F7594800BFDFEF /* MKCoreDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKCoreDataStore.m; path = "Source/Data Store/MKCoreDataStore.m"; sourceTree = "<group>"; };
 		09EB852118F7595400BFDFEF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		09EB852318F75A8E00BFDFEF /* MKDataStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MKDataStore.h; path = "Source/Data Store/MKDataStore.h"; sourceTree = "<group>"; };
+		09EB852318F75A8E00BFDFEF /* MKOperationStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MKOperationStore.h; path = "Source/Data Store/MKOperationStore.h"; sourceTree = "<group>"; };
 		09EB852618F75AFC00BFDFEF /* MKDataStoreModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MKDataStoreModel.xcdatamodel; sourceTree = "<group>"; };
 		09EB852B18F75DEB00BFDFEF /* _MKOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _MKOperation.h; path = "Source/Data Store/Models/Machine/_MKOperation.h"; sourceTree = "<group>"; };
 		09EB852C18F75DEB00BFDFEF /* _MKOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _MKOperation.m; path = "Source/Data Store/Models/Machine/_MKOperation.m"; sourceTree = "<group>"; };
@@ -198,7 +198,7 @@
 				09EB852818F75D3F00BFDFEF /* Models */,
 				09EB851E18F7594800BFDFEF /* MKCoreDataStore.h */,
 				09EB851F18F7594800BFDFEF /* MKCoreDataStore.m */,
-				09EB852318F75A8E00BFDFEF /* MKDataStore.h */,
+				09EB852318F75A8E00BFDFEF /* MKOperationStore.h */,
 				09EB852518F75AFC00BFDFEF /* MKDataStoreModel.xcdatamodeld */,
 			);
 			name = "Data Store";

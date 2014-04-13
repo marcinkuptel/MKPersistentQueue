@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import "MKDataStore.h"
+#import "MKOperationStore.h"
 
 @class MKOperation;
 
@@ -19,7 +19,7 @@ typedef NS_ENUM(NSUInteger, MKCoreDataStoreError)
 
 /**
  */
-@interface MKCoreDataStore : NSObject<MKDataStore>
+@interface MKCoreDataStore : NSObject<MKOperationStore>
 
 - (instancetype) initWithRepositoryName: (NSString*) repoName
                                 context: (NSManagedObjectContext*) context;
