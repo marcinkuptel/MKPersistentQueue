@@ -21,4 +21,6 @@
 
 - (NSError*) removeOperationWithIdentifier: (NSString*) identifier;
 
+- (NSArray*) fetchAllOperations: (NSError**) error;
+
 @end

@@ -55,6 +55,7 @@ static NSString * const kMKCoreDataStoreErrorDomain = @"com.marcinkuptel.core_da
             operation.identifier = identifier;
             operation.priority = @(priority);
             operation.value = value;
+            operation.repository = self.repository;
             
             NSError *saveError = nil;
             [self.context save: &saveError];
@@ -73,6 +74,20 @@ static NSString * const kMKCoreDataStoreErrorDomain = @"com.marcinkuptel.core_da
                                              error: error];
     }];
     return operation;
+}
+
+- (NSArray*) fetchAllOperations: (NSError**) error
+{
+    __block NSArray *operations = nil;
+    [self.context performBlockAndWait:^{
+        NSPredicate *predicate = [NSPredicate predicateWithFormat: @"repository = %@", self.repository];
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName: @"MKOperation"];
+        request.predicate = predicate;
+        
+        operations = [self.context executeFetchRequest: request
+                                                 error: error];
+    }];
+    return operations;
 }
 
 - (NSError*) removeOperationWithIdentifier:(NSString *)identifier
@@ -100,7 +115,8 @@ static NSString * const kMKCoreDataStoreErrorDomain = @"com.marcinkuptel.core_da
 - (MKOperation*) _operationWithIdentifier: (NSString*) identifier
                                     error: (NSError**) error
 {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat: @"identifier = %@", identifier];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat: @"repository = %@ && identifier = %@",
+                              self.repository, identifier];
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName: @"MKOperation"];
     request.fetchLimit = 1;
     request.predicate = predicate;

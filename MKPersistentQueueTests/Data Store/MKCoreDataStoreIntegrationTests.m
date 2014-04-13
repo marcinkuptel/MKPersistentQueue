@@ -59,6 +59,29 @@ describe(@"MKCoreDataStoreIntegration", ^{
                 [[saveError should] beNil];
             }
         });
+        
+        it(@"saves multiple operations and fetches all of them correctly", ^{
+           
+            NSUInteger numOperations = 100;
+            
+            for(int i = 0; i < numOperations; i++){
+                
+                NSString *identifier = [[NSUUID UUID] UUIDString];
+                NSData *data = [identifier dataUsingEncoding: NSUTF8StringEncoding];
+                NSError *saveError = [store saveOperationWithIdentifier: identifier
+                                                               priority: 5
+                                                                  value: data];
+                [[saveError should] beNil];
+            }
+            
+            NSError *fetchError = nil;
+            NSArray *operations = [store fetchAllOperations: &fetchError];
+            
+            [[fetchError should] beNil];
+            [[operations should] beNonNil];
+            [[theValue([operations count]) should] equal: theValue(numOperations)];
+            
+        });
     });
     
     context(@"when removing", ^{

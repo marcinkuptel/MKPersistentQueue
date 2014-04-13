@@ -25,4 +25,10 @@
     return self;
 }
 
+- (void) enqueueOperation: (NSOperation<NSCoding>*) operation
+               completion: (MKPersistentQueueEnqueueCompletion) completion
+{
+    
+}
+
 @end

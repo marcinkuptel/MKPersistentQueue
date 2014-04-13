@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0931B96618FAC9BE00E271D8 /* MKOperationHeap.m in Sources */ = {isa = PBXBuildFile; fileRef = 0931B96518FAC9BE00E271D8 /* MKOperationHeap.m */; };
+		0931B96918FAF09700E271D8 /* MKOperationHeapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0931B96818FAF09700E271D8 /* MKOperationHeapTests.m */; };
 		093480FE6D944730A7E80682 /* libPods-MKPersistentQueueTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9893378612C49AFB90A37E3 /* libPods-MKPersistentQueueTests.a */; };
 		09A49D1A18FAB41900416FE4 /* MKPersistentStoreCoordinatorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A49D1918FAB41900416FE4 /* MKPersistentStoreCoordinatorFactory.m */; };
 		09A49D1E18FAB55A00416FE4 /* MKDataStoreModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09EB852518F75AFC00BFDFEF /* MKDataStoreModel.xcdatamodeld */; };
@@ -58,6 +60,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0931B96418FAC9BE00E271D8 /* MKOperationHeap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKOperationHeap.h; path = "Source/Operation heap/MKOperationHeap.h"; sourceTree = "<group>"; };
+		0931B96518FAC9BE00E271D8 /* MKOperationHeap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKOperationHeap.m; path = "Source/Operation heap/MKOperationHeap.m"; sourceTree = "<group>"; };
+		0931B96818FAF09700E271D8 /* MKOperationHeapTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKOperationHeapTests.m; path = "Operation heap/MKOperationHeapTests.m"; sourceTree = "<group>"; };
 		09A49D1818FAB41900416FE4 /* MKPersistentStoreCoordinatorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKPersistentStoreCoordinatorFactory.h; path = "Source/Data Store/MKPersistentStoreCoordinatorFactory.h"; sourceTree = "<group>"; };
 		09A49D1918FAB41900416FE4 /* MKPersistentStoreCoordinatorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKPersistentStoreCoordinatorFactory.m; path = "Source/Data Store/MKPersistentStoreCoordinatorFactory.m"; sourceTree = "<group>"; };
 		09A49D1F18FAB60800416FE4 /* MKCoreDataContextFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKCoreDataContextFactory.h; path = "Source/Data Store/MKCoreDataContextFactory.h"; sourceTree = "<group>"; };
@@ -122,6 +127,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0931B96318FAC9A400E271D8 /* Operation heap */ = {
+			isa = PBXGroup;
+			children = (
+				0931B96418FAC9BE00E271D8 /* MKOperationHeap.h */,
+				0931B96518FAC9BE00E271D8 /* MKOperationHeap.m */,
+			);
+			name = "Operation heap";
+			sourceTree = "<group>";
+		};
+		0931B96718FAF05C00E271D8 /* Operation heap */ = {
+			isa = PBXGroup;
+			children = (
+				0931B96818FAF09700E271D8 /* MKOperationHeapTests.m */,
+			);
+			name = "Operation heap";
+			sourceTree = "<group>";
+		};
 		09A9D66E18F89D9A00ADAD37 /* Data Store */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,8 +190,10 @@
 		09EB84FA18F7539B00BFDFEF /* MKPersistentQueue */ = {
 			isa = PBXGroup;
 			children = (
+				0931B96318FAC9A400E271D8 /* Operation heap */,
 				09EB852418F75A9600BFDFEF /* Data Store */,
 				09EB84FF18F7539B00BFDFEF /* MKPersistentQueue.m */,
+				09EB84FD18F7539B00BFDFEF /* MKPersistentQueue.h */,
 				09EB84FB18F7539B00BFDFEF /* Supporting Files */,
 			);
 			path = MKPersistentQueue;
@@ -186,6 +210,7 @@
 		09EB850E18F7539B00BFDFEF /* MKPersistentQueueTests */ = {
 			isa = PBXGroup;
 			children = (
+				0931B96718FAF05C00E271D8 /* Operation heap */,
 				09A9D66E18F89D9A00ADAD37 /* Data Store */,
 				09EB851418F7539B00BFDFEF /* MKPersistentQueueTests.m */,
 				09EB850F18F7539B00BFDFEF /* Supporting Files */,
@@ -209,7 +234,6 @@
 				09EB851E18F7594800BFDFEF /* MKCoreDataStore.h */,
 				09EB851F18F7594800BFDFEF /* MKCoreDataStore.m */,
 				09EB852318F75A8E00BFDFEF /* MKOperationStore.h */,
-				09EB84FD18F7539B00BFDFEF /* MKPersistentQueue.h */,
 				09EB852518F75AFC00BFDFEF /* MKDataStoreModel.xcdatamodeld */,
 				09A49D1818FAB41900416FE4 /* MKPersistentStoreCoordinatorFactory.h */,
 				09A49D1918FAB41900416FE4 /* MKPersistentStoreCoordinatorFactory.m */,
@@ -401,6 +425,7 @@
 			files = (
 				09EB852018F7594800BFDFEF /* MKCoreDataStore.m in Sources */,
 				09EB853618F75DF800BFDFEF /* MKRepository.m in Sources */,
+				0931B96618FAC9BE00E271D8 /* MKOperationHeap.m in Sources */,
 				09A49D2118FAB60800416FE4 /* MKCoreDataContextFactory.m in Sources */,
 				09A49D1A18FAB41900416FE4 /* MKPersistentStoreCoordinatorFactory.m in Sources */,
 				09EB852F18F75DEB00BFDFEF /* _MKOperation.m in Sources */,
@@ -416,6 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0931B96918FAF09700E271D8 /* MKOperationHeapTests.m in Sources */,
 				09A9D67018F89DBE00ADAD37 /* MKCoreDataStoreTests.m in Sources */,
 				09A49D1E18FAB55A00416FE4 /* MKDataStoreModel.xcdatamodeld in Sources */,
 				09EB851518F7539B00BFDFEF /* MKPersistentQueueTests.m in Sources */,
