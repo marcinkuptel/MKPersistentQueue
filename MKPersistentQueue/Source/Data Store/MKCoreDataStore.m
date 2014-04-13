@@ -38,43 +38,61 @@
 {
     __block NSError *error = nil;
     [self.context performBlockAndWait:^{
-        MKOperation *operation = [self _operationWithIdentifier: identifier];
-        if (!operation) {
-            operation = [NSEntityDescription insertNewObjectForEntityForName: @"MKOperation"
-                                                      inManagedObjectContext: self.context];
+        NSError *fetchError = nil;
+        MKOperation *operation = [self _operationWithIdentifier: identifier
+                                                          error: &fetchError];
+        
+        if (fetchError) {
+            error = fetchError;
+        }else{
+            if (!operation) {
+                operation = [NSEntityDescription insertNewObjectForEntityForName: @"MKOperation"
+                                                          inManagedObjectContext: self.context];
+            }
+            
+            operation.identifier = identifier;
+            operation.priority = @(priority);
+            operation.value = value;
+            
+            NSError *saveError = nil;
+            [self.context save: &saveError];
+            error = saveError;
         }
-        
-        operation.identifier = identifier;
-        operation.priority = @(priority);
-        operation.value = value;
-        
-        NSError *saveError = nil;
-        [self.context save: &saveError];
-        error = saveError;
     }];
     return error;
+}
+
+- (MKOperation*) fetchOperationWithIdentifier: (NSString*) identifier
+                                        error: (NSError**) error
+{
+    __block MKOperation *operation = nil;
+    [self.context performBlockAndWait:^{
+        operation = [self _operationWithIdentifier: identifier
+                                             error: error];
+    }];
+    return operation;
 }
 
 #pragma mark - Private
 
 - (MKOperation*) _operationWithIdentifier: (NSString*) identifier
+                                    error: (NSError**) error
 {
     NSPredicate *predicate = [NSPredicate predicateWithFormat: @"identifier = %@", identifier];
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName: @"MKOperation"];
     request.fetchLimit = 1;
     request.predicate = predicate;
     
-    NSError *fetchError = nil;
     NSArray *operations = [self.context executeFetchRequest: request
-                                                      error: &fetchError];
+                                                      error: error];
     
-    if (fetchError) {
-        NSAssert1(NO, @"Could not fetch operation. Error: %@", fetchError);
+    if (*error) {
+        return nil;
+    }else{
+        NSAssert([operations count] <= 1, @"Wrong number of operations: %d", [operations count]);
+        
+        return [operations lastObject];
     }
-    
-    NSAssert([operations count] <= 1, @"Wrong number of operations: %d", [operations count]);
-    
-    return [operations lastObject];
 }
 
 - (MKRepository*) _loadRepositoryWithName: (NSString*) repoName

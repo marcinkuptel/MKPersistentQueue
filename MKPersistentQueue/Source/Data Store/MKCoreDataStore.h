@@ -10,6 +10,8 @@
 #import <CoreData/CoreData.h>
 #import "MKDataStore.h"
 
+@class MKOperation;
+
 /**
  */
 @interface MKCoreDataStore : NSObject<MKDataStore>
@@ -20,5 +22,8 @@
 - (NSError*) saveOperationWithIdentifier: (NSString*) identifier
                                 priority: (NSUInteger) priority
                                    value: (NSData*) value;
+
+- (MKOperation*) fetchOperationWithIdentifier: (NSString*) identifier
+                                        error: (NSError**) error;
 
 @end

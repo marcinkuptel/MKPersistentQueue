@@ -8,6 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+@class MKOperation;
+
 @protocol MKDataStore <NSObject>
+
+- (NSError*) saveOperationWithIdentifier: (NSString*) identifier
+                                priority: (NSUInteger) priority
+                                   value: (NSData*) value;
+
+- (MKOperation*) fetchOperationWithIdentifier: (NSString*) identifier
+                                        error: (NSError**) error;
+
+- (NSError*) removeOperationWithIdentifier: (NSString*) identifier;
 
 @end
