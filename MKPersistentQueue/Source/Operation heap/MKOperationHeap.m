@@ -7,6 +7,7 @@
 //
 
 #import "MKOperationHeap.h"
+#import "MKOperationWrapper.h"
 
 /**
  Binary heap callbacks required to create an instace
@@ -47,7 +48,7 @@ CFComparisonResult PQCompare(const void *ptr1, const void *ptr2, void *unused){
         CFBinaryHeapCallBacks callBacks = {0, PQRetain, PQRelease, NULL, PQCompare};
         _binaryHeapRef = CFBinaryHeapCreate(NULL, 0, &callBacks, NULL);
         _operationStore = operationStore;
-        //[self loadObjectsFromRepository: _repository];
+        [self _loadOperationsFromStore: operationStore];
     }
     return self;
 }
@@ -57,10 +58,36 @@ CFComparisonResult PQCompare(const void *ptr1, const void *ptr2, void *unused){
     CFRelease(_binaryHeapRef);
 }
 
+- (NSError*) addOperation: (NSOperation<NSCoding> *)operation
+             withPriority: (NSUInteger)priority
+                timestamp: (Timestamp)timestamp
+{
+    NSString *uniqueID = [[NSUUID UUID] UUIDString];
+    MKOperationWrapper *wrapper = [[MKOperationWrapper alloc] initWithOperation: operation];
+    wrapper.identifier = uniqueID;
+    wrapper.timestamp = timestamp;
+    wrapper.priority = priority;
+    
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject: wrapper];
+    
+    NSError *error = [self.operationStore saveOperationWithIdentifier: uniqueID
+                                                                value: data];
+    if (!error) {
+        CFBinaryHeapAddValue(_binaryHeapRef, (__bridge const void*)(wrapper));
+    }
+    
+    return error;
+}
+
+#pragma mark - Private
+
 - (void) _loadOperationsFromStore: (id<MKOperationStore>) operationStore
 {
     NSError *fetchError = nil;
-    NSArray *operations = [self.operationStore fetchAllOperations: &fetchError];
+    NSArray *operationWrappers = [self.operationStore fetchAllOperations: &fetchError];
+    for (MKOperationWrapper *wrapper in operationWrappers) {
+        CFBinaryHeapAddValue(_binaryHeapRef, (__bridge const void*)(wrapper));
+    }
 }
 
 @end

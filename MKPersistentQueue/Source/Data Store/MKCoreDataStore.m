@@ -35,7 +35,6 @@ static NSString * const kMKCoreDataStoreErrorDomain = @"com.marcinkuptel.core_da
 }
 
 - (NSError*) saveOperationWithIdentifier: (NSString *)identifier
-                                priority: (NSUInteger)priority
                                    value: (NSData *)value
 {
     __block NSError *error = nil;
@@ -53,7 +52,6 @@ static NSString * const kMKCoreDataStoreErrorDomain = @"com.marcinkuptel.core_da
             }
             
             operation.identifier = identifier;
-            operation.priority = @(priority);
             operation.value = value;
             operation.repository = self.repository;
             
@@ -84,8 +82,16 @@ static NSString * const kMKCoreDataStoreErrorDomain = @"com.marcinkuptel.core_da
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName: @"MKOperation"];
         request.predicate = predicate;
         
-        operations = [self.context executeFetchRequest: request
-                                                 error: error];
+        NSArray *managedObjects = [self.context executeFetchRequest: request
+                                                              error: error];
+        if (!*error) {
+            NSMutableArray *convertedOperations = [@[] mutableCopy];
+            [managedObjects enumerateObjectsUsingBlock:^(MKOperation *operation, NSUInteger idx, BOOL *stop) {
+                 id convertedOperation = [NSKeyedUnarchiver unarchiveObjectWithData: operation.value];
+                [convertedOperations addObject: convertedOperation];
+            }];
+            operations = [NSArray arrayWithArray: convertedOperations];
+        }
     }];
     return operations;
 }

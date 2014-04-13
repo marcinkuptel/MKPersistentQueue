@@ -13,4 +13,8 @@
 
 - (instancetype) initWithOperationStore: (id<MKOperationStore>) operationStore;
 
+- (NSError*) addOperation: (NSOperation<NSCoding>*) operation
+             withPriority: (NSUInteger) priority
+                timestamp: (Timestamp) timestamp;
+
 @end
